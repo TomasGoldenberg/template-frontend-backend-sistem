@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    Hola bienvenido a LARAVELITO
                 </div>
             </div>
         </div>

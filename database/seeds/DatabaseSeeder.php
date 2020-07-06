@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
 
         factory(App\User::class, 7)->create();
 
-        
+        //PAGES
         App\Page::create([
             "parent_id" => null,
             "title"     => "Quienes Somos",
@@ -42,6 +42,7 @@ class DatabaseSeeder extends Seeder
             "body"      => "NOS ENCANTAra CREAR todas las EMPRESAS CHINGONAS que existan WEEEY QUE PEDOOOO"
         ]);
 
-
+        //POSTS
+        factory(App\Post::class, 24)->create();
     }
 }
