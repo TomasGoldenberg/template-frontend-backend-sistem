@@ -11,10 +11,19 @@ class PageController extends Controller
         return view("home");
     }
 
-    public function posts(){
-        return view("posts",[
-            "posts" => Post::with("user")->latest()->paginate()
-        ]);
+    public function posts(Request $request){
+        $title= $request->get("title");
+        $body= $request->get("body");
+
+        $posts= Post::with("user")
+            ->latest()
+            ->title($title)
+            ->body($body)
+            ->paginate();
+
+        return view("posts", compact("posts","title","body"));
+
+        
     }
 
     public function post(Post $post){

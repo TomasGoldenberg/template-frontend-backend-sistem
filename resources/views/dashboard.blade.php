@@ -1,10 +1,13 @@
 @extends('layouts.app')
+@section("css")
+<link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+@endsection
 
 @section("title", "Inicio")
 @section('content')
 
 <a href="{{ route("posts.index") }}" class="btn btn-block btn-warning">Administrar Blog</a>
-
+<br><br>
 
 <h1>Ultima conexion contactos</h1>
 <ul class="list-group">

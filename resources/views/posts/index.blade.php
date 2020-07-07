@@ -5,14 +5,14 @@
 
     
             <div class="card">
-                <div class="card-header">
-                <a href=" {{route("posts.create")}}"class="btn btn-warning btn-block"> Crear Nuevo Articulo </a>
-                </div>
+              
+                <a href=" {{route("posts.create")}}"class="btn btn-warning btn-block shadow"> Crear Nuevo Articulo </a>
+                
 
                 <div class="card-body">
-                    @if (session('status'))
+                    @if (session('error'))
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            {{ session('error') }}
                         </div>
                     @endif
 
