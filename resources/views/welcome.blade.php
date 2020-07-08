@@ -36,6 +36,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <a href="{{route("posts")}}" class="nav-link"> Blog</a>
+                        <a href="{{route("expenseReport.index")}}" class="nav-link"> Reports</a>
                         
                     </ul>
                     
