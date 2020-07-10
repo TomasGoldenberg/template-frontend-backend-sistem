@@ -29,8 +29,17 @@
     <div class="row">
         <div class="col">
             <h3>Detalle</h3>
-            <table class="table table-hover">
-                
+            <table class="table table-hover mt-2">
+                <thead>
+                    <tr>
+                        <td><h3>Descripcion</h3></td>
+                        <td><h3>Fecha</h3></td>
+                        <td><h3>Importe</h3></td>
+                        <th></th>
+                        <th></th>
+
+                    </tr>
+                </thead>
                 @foreach ($report->expenses as $expense)
              
                 <tr>
@@ -43,7 +52,10 @@
                         "expense"      => $expense->id
                     ])}}" class="btn btn-warning">Editar</a></td>
                     <td>
-                        <form action="" 
+                        <form action="{{route("expenseReport.expenses.destroy",[
+                            "expenseReport"=> $report,
+                            "expense"      => $expense->id
+                        ])}}" 
                             method="POST">
                             @method("DELETE")
                             @csrf
@@ -61,6 +73,8 @@
                         <td> Total:</td>
                         <th></th>
                         <td>${{$report->expenses->sum('amount')}}</td>
+                        <th></th>
+                        <th></th>
                     </tr>
             </table>
         </div>

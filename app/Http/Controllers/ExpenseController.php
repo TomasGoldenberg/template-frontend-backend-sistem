@@ -37,4 +37,21 @@ class ExpenseController extends Controller
       
         return view("expense.edit",compact('expenseReport','expense'));
     }
+
+    public function update(ExpenseReport $expenseReport,Expense $expense,Request $request){
+        
+        $expense->update($request->all());
+        $expense->save();
+
+        return redirect()
+            ->route("expenseReport.show",$expenseReport->id)
+            ->with("status","Actualizado con Exito !");
+        
+    }
+
+    public function destroy(ExpenseReport $expenseReport,Expense $expense){
+        
+        $expense->delete();
+        return back()->with("status","Eliminado con Exito !");
+    }
 }

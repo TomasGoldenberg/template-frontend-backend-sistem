@@ -21,10 +21,14 @@
                     </ul>
                 </div>
             @endif
-            <form action=""
+            <form action="{{route("expenseReport.expenses.update",[
+                "expenseReport"=> $expenseReport,
+                "expense"      => $expense->id
+            ])}}"
             method="POST"
             enctype="multipart/form-data">
                 @csrf
+                @method("PUT")
                 <div class="form-group">
                     <label class="text-center" >Descripcion</label>
                     <input type="text" required name="description" class="form-control" placeholder="Insertar Descripcion" value="{{ old("description",$expense->description) }}">
