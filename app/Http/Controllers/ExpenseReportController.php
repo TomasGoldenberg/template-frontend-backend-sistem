@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ExpenseReport;
+use App\Expense;
+
 
 class ExpenseReportController extends Controller
 {
@@ -34,8 +36,11 @@ class ExpenseReportController extends Controller
     }
 
     public function show($id){
+        
         $report = ExpenseReport::findOrFail($id);
+        
         return view("expenseReport.show",compact('report'));
+
     }
 
     public function edit($id){

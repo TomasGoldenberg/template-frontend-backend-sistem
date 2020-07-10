@@ -18,7 +18,7 @@
         </div>
         
         <div class="col">
-            <a href="{{ route("expenseReport.index") }}" class="btn btn-outline-primary float-right">Atras</a>
+            <a href="{{ route("expenseReport.index") }}" class="btn btn-outline-success float-right">Atras</a>
         </div>
     </div>
     @if (session('status'))
@@ -30,24 +30,43 @@
         <div class="col">
             <h3>Detalle</h3>
             <table class="table table-hover">
+                
                 @foreach ($report->expenses as $expense)
+             
                 <tr>
+                    
                     <td>{{$expense->description}}</td>
-                    <td>{{$expense->amount}}</td>
                     <td>{{$expense->created_at->format("d M Y")}}</td>
+                    <td>${{$expense->amount}}</td>
+                    <td><a href="{{route("expenseReport.expenses.edit",[
+                        "expenseReport"=> $report,
+                        "expense"      => $expense->id
+                    ])}}" class="btn btn-warning">Editar</a></td>
+                    <td>
+                        <form action="" 
+                            method="POST">
+                            @method("DELETE")
+                            @csrf
+                            <input type="submit"
+                                value="Eliminar"
+                                class="btn btn-outline-danger "
+                                onclick="return confirm('Desea eliminar el Gasto')"
+                            >
+                        </form>
+                    </td>
 
                 </tr>
                     @endforeach
-                    <tr>
+                    <tr >
                         <td> Total:</td>
-                        <td>{{$report->expenses->sum('amount')}}</td>
                         <th></th>
+                        <td>${{$report->expenses->sum('amount')}}</td>
                     </tr>
             </table>
         </div>
     </div>
     <div class="row">
-        <a href="{{route("expenseReport.expenses.create",$report->id)}}"class="btn btn-success ml-3"> New Expense</a>
+        <a href="{{route("expenseReport.expenses.create",$report)}}"class="btn btn-success ml-3"> Registrar Gasto</a>
     </div>
 </div>
 @endsection

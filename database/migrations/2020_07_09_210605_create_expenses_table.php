@@ -19,11 +19,15 @@ class CreateExpensesTable extends Migration
             $table->bigInteger("expense_report_id")->unsigned();
 
             $table->text("description");
-            $table->decimal("amount");
+            $table->bigInteger("amount");
 
             
 
             $table->timestamps();
+
+            $table->foreign("expense_report_id")->references("id")->on("expense_reports")
+                ->onDelete("cascade")
+                ->onUpdate("cascade");
         });
     }
 

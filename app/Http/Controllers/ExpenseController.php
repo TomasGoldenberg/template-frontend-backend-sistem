@@ -30,4 +30,11 @@ class ExpenseController extends Controller
             ->with("status","Creado con Exito !");
 
     }
+
+    public function edit(ExpenseReport $expenseReport,Expense $expense){
+        //$expenseReport = ExpenseReport::findOrFail($expenseReport);
+        //$expense = Expense::findOrFail($expense);
+      
+        return view("expense.edit",compact('expenseReport','expense'));
+    }
 }
