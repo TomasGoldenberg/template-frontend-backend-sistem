@@ -20,10 +20,15 @@ class ExpenseReportController extends Controller
     }
 
     public function store(Request $request){
-        $request->validate(["title" => "required|min:3"]);
+        $request->validate([
+            "title" => "required|min:3",
+            "name" => "required|min:3"
+            ]);
 
         $report = ExpenseReport::create($request->all());
+
         $report->save();
+        
         return redirect()->route("expenseReport.index")
             ->with("status","Creado con Exito !");
     }
@@ -42,6 +47,8 @@ class ExpenseReportController extends Controller
     public function update(Request $request, $id){
         $report = ExpenseReport::findOrFail($id);
         $report->title = $request->get("title");
+        $report->name = $request->get("name");
+
         $report->save();
 
         return redirect()->route("expenseReport.index")

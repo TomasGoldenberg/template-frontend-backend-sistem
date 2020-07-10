@@ -32,7 +32,11 @@
                         @csrf
                         <div class="form-group">
                             <h3 class="text-center">Titulo</h3>
-                            <input type="text" name="title" class="form-control" id="title" placeholder="Ingresar Titulo" >
+                            <input type="text" name="title" required class="form-control" id="title" placeholder="Ingresar Titulo" >
+                        </div>
+                        <div class="form-group">
+                            <h3 class="text-center">Nombre</h3>
+                            <input type="text" name="name" required class="form-control" id="name" placeholder="Ingresar Nombre" >
                         </div>
                         <input type="submit" class="btn btn-outline-primary btn-block" value="Crear">
                     </form>

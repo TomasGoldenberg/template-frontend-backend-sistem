@@ -11,7 +11,7 @@ Route::get('/blog/{post:slug}', "PageController@post")->name("post");
 
 Route::resource("/expenseReport" , "ExpenseReportController");
 
-
+Route::resource("/expenseReport.expenses" ,"ExpenseController");
 
 
 Auth::routes();
