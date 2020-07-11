@@ -14,7 +14,7 @@
     <div class="row mb-3">
 
         <div class="col">
-            <a href="" class="btn btn-outline-success ">Exportar via E-Mail</a>
+            <a href="{{ route("expenseReport.confirmSendMail",$report) }}" class="btn btn-outline-success ">Exportar via E-Mail</a>
         </div>
         
         <div class="col">

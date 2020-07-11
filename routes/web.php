@@ -13,6 +13,9 @@ Route::resource("/expenseReport" , "ExpenseReportController");
 
 Route::resource("/expenseReport.expenses" ,"ExpenseController");
 
+Route::get("/expenseReport/{expenseReport}/confirmSendMail","ExpenseReportController@confirmSendMail")->name("expenseReport.confirmSendMail");
+Route::post("/expenseReport/{expenseReport}/sendMail","ExpenseReportController@sendMail")->name("expenseReport.sendMail");
+
 
 Auth::routes();
 
