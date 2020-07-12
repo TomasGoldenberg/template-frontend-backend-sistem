@@ -37,7 +37,8 @@
                     <ul class="navbar-nav mr-auto">
                         <a href="{{route("posts")}}" class="nav-link"> Blog</a>
                         <a href="{{route("expenseReport.index")}}" class="nav-link"> Reports</a>
-
+                        <a href="{{route("instagram")}}" class="nav-link">Instagram</a>
+                        <a href="" class="nav-link">Email</a>
                         
                     </ul>
                     

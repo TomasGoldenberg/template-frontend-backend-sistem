@@ -9,6 +9,9 @@ Route::get('/', "PageController@home")->name("home");
 Route::get('/blog', "PageController@posts")->name("posts");
 Route::get('/blog/{post:slug}', "PageController@post")->name("post");
 
+Route::get("/instagram","PageController@instagram")->name("instagram");
+Route::get("/instagram/{instadetail}","PageController@instadetail" )->name("instadetail");
+
 Route::resource("/expenseReport" , "ExpenseReportController");
 
 Route::resource("/expenseReport.expenses" ,"ExpenseController");

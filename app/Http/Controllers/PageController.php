@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
 use Illuminate\Http\Request;
+use App\Post;
+use App\Instagram;
+use App\InstaDetail;
 
 class PageController extends Controller
 {
@@ -28,5 +30,15 @@ class PageController extends Controller
 
     public function post(Post $post){
         return view("post",["post" => $post]);
+    }
+
+    public function instagram(){
+        return view("instagram",[
+            "categories" => Instagram::all()
+        ])  ;}
+
+    public function instadetail($id){
+        $instagram= Instagram::findOrFail($id);
+        return view("instadetail",compact("instagram"));
     }
 }

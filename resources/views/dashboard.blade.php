@@ -7,7 +7,9 @@
 @section('content')
 
 <a href="{{ route("posts.index") }}" class="btn btn-block btn-warning">Administrar Blog</a>
-<br><br>
+<br>
+<a href="{{ route("instagram.index") }}" class="btn btn-block btn-success">Administrar Instagram</a>
+<br>
 
 <h1>Ultima conexion contactos</h1>
 <ul class="list-group">
