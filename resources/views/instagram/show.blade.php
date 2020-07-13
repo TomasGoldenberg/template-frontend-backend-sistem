@@ -45,7 +45,12 @@
         </div>
     </div>
     <div class="row">
-        <a href=" {{ route("instagram.instadetails.create",$instagram) }} " class="btn btn-outline-primary ml-3">Agregar Informacion</a>
+        <div class="col">
+            <a href=" {{ route("instagram.instadetails.create",$instagram) }} " class="btn btn-outline-primary ml-2">Agregar Informacion</a>
+        </div>
+        <div class="col">
+            <a href=" {{ route("instagram.instaaccounts.create",$instagram) }} " class="btn btn-outline-primary float-right">Agregar Cuentas</a>
+        </div>
     </div>
 </div>
     

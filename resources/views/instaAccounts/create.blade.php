@@ -21,7 +21,7 @@
                     </ul>
                 </div>
             @endif
-            <form action=" {{ route("instagram.instadetails.store",$instagram) }} "
+            <form action=" {{ route("instagram.instaaccounts.store",$instagram) }} "
                 method="POST"
                 enctype="multipart/form-data">
                 @csrf
@@ -29,13 +29,7 @@
                
 
                 <div class="form-group">
-                    <label>Comentario</label>
-                    <textarea name="comment" rows="6" class="form-control" placeholder="Ingresar Comentario"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Mensaje</label>
-                    <textarea name="message" rows="6" class="form-control" placeholder="Ingresar Mensaje"></textarea>
+                    <input type="text" class="form-control" name="account" placeholder="Ingresar Nueva Cuenta">
                 </div>
 
                 <input type="submit" class="btn btn-outline-primary btn-block" value="Guardar">

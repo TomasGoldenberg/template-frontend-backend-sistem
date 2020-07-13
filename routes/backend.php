@@ -8,4 +8,5 @@ Route::resource("/posts","PostController")->except("show");
 Route::resource("/instagram","InstagramController");
 
 Route::resource("/instagram.instadetails","InstaDetailController");
+Route::resource("/instagram.instaaccounts","InstaAccountController");
 

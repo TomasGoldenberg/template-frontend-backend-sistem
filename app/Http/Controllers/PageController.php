@@ -40,5 +40,7 @@ class PageController extends Controller
     public function instadetail($id){
         $instagram= Instagram::findOrFail($id);
         return view("instadetail",compact("instagram"));
+        
+    
     }
 }

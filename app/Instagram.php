@@ -13,4 +13,8 @@ class Instagram extends Model
     public function instaDetails(){
         return $this->hasMany(InstaDetail::class);
     }
+
+    public function instaAccounts(){
+        return $this->hasMany(InstaAccount::class);
+    }
 }

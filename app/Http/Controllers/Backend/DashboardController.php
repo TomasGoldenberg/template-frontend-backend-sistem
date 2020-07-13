@@ -10,7 +10,7 @@ class DashboardController extends Controller
     public function index(User $user){
         return view("dashboard",[
 
-            "users" => $user->take(5)->get()
+            "users" => $user->latest()->take(4)->get()
         ]);
     }
 }
