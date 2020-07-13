@@ -14,7 +14,8 @@ class CreateGmailsTable extends Migration
     public function up()
     {
         Schema::create('gmails', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements("id");
+            $table->string("category");
             $table->timestamps();
         });
     }

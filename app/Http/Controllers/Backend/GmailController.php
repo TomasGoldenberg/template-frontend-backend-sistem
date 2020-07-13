@@ -4,8 +4,18 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Gmail;
+
 
 class GmailController extends Controller
 {
-    //
+    public function index(){
+        $categories = Gmail::latest()->get();
+
+        return view("gmail.index",compact("categories"));
+    }
+
+    public function create(){
+        return view("gmail.create");
+    }
 }
