@@ -18,4 +18,13 @@ class GmailController extends Controller
     public function create(){
         return view("gmail.create");
     }
+
+    public function store(Request $request){
+        $category = Gmail::create($request->all());
+        $category->save();
+
+        return redirect()->
+            route("gmail.index")
+            ->with("status","Categoria Creada !");
+    }
 }
