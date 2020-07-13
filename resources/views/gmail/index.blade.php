@@ -18,9 +18,9 @@
 
                     @foreach ($categories as $gmail)
                         <tr>
-                            <td><a href="">{{$gmail->category}} </a></td>
+                            <td><a href=" {{ route("gmail.show",$gmail) }} ">{{$gmail->category}} </a></td>
                             <td > &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-                            <td><form action="" method="POST" enctype="multipart/form-data">
+                            <td><form action="{{route("gmail.destroy",$gmail)}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method("DELETE")
                                     <input type="submit" class="btn btn-danger float-right"value="Eliminar" onclick="return confirm('Desea Eliminar?')">

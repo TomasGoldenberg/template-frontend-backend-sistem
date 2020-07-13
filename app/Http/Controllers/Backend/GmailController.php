@@ -27,4 +27,13 @@ class GmailController extends Controller
             route("gmail.index")
             ->with("status","Categoria Creada !");
     }
+
+    public function show(Gmail $gmail){
+        return view("gmail.show",compact("gmail"));
+    }
+
+    public function destroy(Gmail $gmail){
+        $gmail->delete();
+        return back()->with("status","Categoria Eliminada");
+    }
 }
