@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Instagram;
 use App\InstaDetail;
+use App\Gmail;
+
 
 class PageController extends Controller
 {
@@ -42,5 +44,16 @@ class PageController extends Controller
         return view("instadetail",compact("instagram"));
         
     
+    }
+
+    public function gmail(){
+        return view("gmail",[
+            "categories" =>Gmail::all()
+        ]);
+    }
+
+    public function gmaildetail($id){
+        $gmail= Gmail::findOrFail($id);
+        return view("gmaildetail",compact("gmail"));
     }
 }

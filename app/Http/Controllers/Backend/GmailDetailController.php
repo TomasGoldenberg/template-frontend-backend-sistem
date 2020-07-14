@@ -41,4 +41,11 @@ class GmailDetailController extends Controller
             ->with("status","Informacion Actualizada Exitosamente");
 
     }
+
+
+    public function destroy(Gmail $gmail,$id){
+        $detail= GmailDetail::findOrFail($id);
+        $detail->delete();
+        return back()->with("status","Mensaje Eliminado");
+    }
 }

@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="card mb-3">
-                        <a class="btn btn-danger btn-lg btn-block" href="">Email</a>
+                        <a class="btn btn-danger btn-lg btn-block" href="{{ route("gmail") }}">Email</a>
                     </div>
 
                     <div class="card mb-3">

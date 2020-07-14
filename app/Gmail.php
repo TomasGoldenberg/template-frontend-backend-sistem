@@ -13,4 +13,8 @@ class Gmail extends Model
     public function gmailDetails(){
         return $this->hasMany(GmailDetail::class);
     }
+
+    public function gmailAccounts(){
+        return $this->hasMany(GmailAccount::class);
+    }
 }

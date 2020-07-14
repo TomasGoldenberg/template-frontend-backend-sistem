@@ -15,3 +15,4 @@ Route::resource("/instagram.instaaccounts","InstaAccountController");
 Route::resource("/gmail","GmailController");
 
 Route::resource("/gmail.gmaildetails","GmailDetailController");
+Route::resource("/gmail.gmailaccounts","GmailAccountController");

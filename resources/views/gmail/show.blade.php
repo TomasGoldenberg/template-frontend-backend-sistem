@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row mt-4">
         <div class="col">
-            <h1>Categoria: {{$gmail->category}}</h1>
+            <h2>Categoria: {{$gmail->category}}</h2>
         </div>
         <div class="col">
             <a href="{{ route("gmail.index") }}" class="btn btn-outline-primary float-right">Atras</a>
@@ -32,14 +32,18 @@
                     <tr>
                         <td>{{$detail->message}}</td>
                         <td><a href="{{ route("gmail.gmaildetails.edit",[
-                            "gmail"=>$gmail,
+                            "gmail"      =>$gmail,
                             "gmaildetail"=>$detail
-                        ]) }}" class="btn btn-warning">Editar</a></td>
+                        ]) }}" class="btn btn-warning mt-5">Editar</a></td>
                         <td>
-                            <form action="">
+                            <form action="{{ route("gmail.gmaildetails.destroy",[
+                                "gmail"      => $gmail,
+                                "gmaildetail"=> $detail
+                            ]) }}"
+                            method="POST">
                                 @csrf
                                 @method("DELETE")
-                                <input type="submit" class="btn btn-danger" value="Eliminar">
+                                <input type="submit" class="btn btn-danger mt-5" value="Eliminar" onclick="return confirm('Desea Eliminar?')"> 
                             </form>
                         </td>
                     </tr>
@@ -53,6 +57,9 @@
     <div class="row">
         <div class="col">
             <a href=" {{ route("gmail.gmaildetails.create",$gmail) }} "class="btn btn-outline-primary ml-2">Agregar Mensaje</a>
+        </div>
+        <div class="col">
+            <a href=" {{ route("gmail.gmailaccounts.create",$gmail) }} " class="btn btn-outline-primary float-right">Agregar Cuentas</a>
         </div>
     </div>
 </div>
