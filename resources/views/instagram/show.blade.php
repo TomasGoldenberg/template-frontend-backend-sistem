@@ -37,7 +37,17 @@
                             "instagram"=>$instagram,
                             "instadetail"=> $detail
                         ]) }} " class="mt-5 btn btn-warning">Editar</a></td>
-                        <td><a href="" class="mt-5 btn btn-outline-danger">Eliminar</a></td>
+                        <td>
+                            <form action="{{ route("instagram.instadetails.destroy",[
+                                 "instagram"=>$instagram,
+                                "instadetail"=> $detail
+                            ]) }}"
+                            method="POST">
+                                @csrf
+                                @method("DELETE")
+                                <input type="submit" class="btn btn-outline-danger mt-5" value="Eliminar" onclick="return confirm('Desea Eliminar?')">
+                            </form>
+                        </td>
 
                     </tr>
                 @endforeach

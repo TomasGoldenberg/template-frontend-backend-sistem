@@ -27,21 +27,32 @@
                     </tr>
                 </thead>
                 
-                    
-                        <tr>
-                            <td>aca va el mail</td>
-                            <td><a href="" class="btn btn-warning">Editar</a></td>
-                            <td>
-                                <form action="">
-                                    @csrf
-                                    @method("DELETE")
-                                    <input type="submit" class="btn btn-danger" value="Eliminar">
-                                </form>
-                            </td>
-                        </tr>
+                    @foreach ($gmail->gmaildetails as $detail)
+                        
+                    <tr>
+                        <td>{{$detail->message}}</td>
+                        <td><a href="{{ route("gmail.gmaildetails.edit",[
+                            "gmail"=>$gmail,
+                            "gmaildetail"=>$detail
+                        ]) }}" class="btn btn-warning">Editar</a></td>
+                        <td>
+                            <form action="">
+                                @csrf
+                                @method("DELETE")
+                                <input type="submit" class="btn btn-danger" value="Eliminar">
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
                     
                
             </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <a href=" {{ route("gmail.gmaildetails.create",$gmail) }} "class="btn btn-outline-primary ml-2">Agregar Mensaje</a>
         </div>
     </div>
 </div>

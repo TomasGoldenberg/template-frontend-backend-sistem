@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\InstaDetail;
 use App\Instagram;
@@ -39,5 +38,12 @@ class InstaDetailController extends Controller
         return redirect()
         ->route("instagram.show",$instagram)
         ->with("status","Informacion Actualizada Exitosamente");
+    }
+
+    public function destroy(Instagram $instagram,$id){
+        $instaDetail = InstaDetail::findOrFail($id);
+        $instaDetail->delete();
+        return back()->with("status","Detalle Eliminada");
+
     }
 }

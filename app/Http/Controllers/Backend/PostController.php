@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
 use App\Post;
 use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Storage;
