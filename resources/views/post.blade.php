@@ -20,7 +20,7 @@
                         {!! $post->iframe !!}
                     </div>
                 @endif
-                    <h5 class="card-title">Post Number: {{$post->id}}</h5>
+                    <h5 class="card-title">Post Id: {{$post->id}}</h5>
                     <p class="card-text">
                         {{$post->body}} <br>
                        
