@@ -25,5 +25,5 @@ Route::get("/expenseReport/{expenseReport}/confirmSendMail","ExpenseReportContro
 Route::post("/expenseReport/{expenseReport}/sendMail","ExpenseReportController@sendMail")->name("expenseReport.sendMail");
 
 
-Auth::routes();
+
 
